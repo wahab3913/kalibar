@@ -126,8 +126,8 @@ export default function LoginPage() {
                 <Link href="/dashboard">
                   <Button
                     // type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                    disabled={isLoading}
+                    className="w-full cursor-pointer bg-primary hover:bg-primary/90 text-primary-foreground"
+                    // disabled={isLoading}
                   >
                     Sign In
                   </Button>
