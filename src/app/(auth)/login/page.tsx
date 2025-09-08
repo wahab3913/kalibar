@@ -16,6 +16,7 @@ import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { BarChart3, Eye, EyeOff } from 'lucide-react';
 import AuthBackground from '../AuthBackground';
+import Link from 'next/link';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -122,13 +123,15 @@ export default function LoginPage() {
                   </Link>
                 </div> */}
 
-                <Button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                  disabled={isLoading}
-                >
-                  {isLoading ? 'Signing in...' : 'Sign In'}
-                </Button>
+                <Link href="/dashboard">
+                  <Button
+                    // type="submit"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                    disabled={isLoading}
+                  >
+                    Sign In
+                  </Button>
+                </Link>
               </form>
 
               {/* <div className="mt-6 text-center">
