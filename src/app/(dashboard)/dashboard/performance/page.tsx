@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { SummariesPanel } from '../components/SummariesPanel';
+import { DriversPanel } from '../components/DriversPanel';
+import { AccessFilters } from '../components/AccessFilters';
 import { Calendar } from 'lucide-react';
 
-export default function SummariesPage() {
-  const [timeFilter, setTimeFilter] = useState<'daily' | 'weekly' | 'monthly'>(
-    'daily'
-  );
+export default function PerformancePage() {
+  const [timeFilter, setTimeFilter] = useState<'daily' | 'weekly'>('daily');
+  const [selectedBranches, setSelectedBranches] = useState<string[]>([]);
+  const [selectedWarehouses, setSelectedWarehouses] = useState<string[]>([]);
 
   return (
     <main className="p-6">
@@ -18,10 +19,10 @@ export default function SummariesPage() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <h1 className="text-3xl font-bold text-foreground">
-                Performance Summaries
+                Driver Performance
               </h1>
               <p className="text-muted-foreground">
-                AI-generated insights and performance reports
+                Analytics and performance metrics for all drivers
               </p>
             </div>
 
@@ -44,19 +45,20 @@ export default function SummariesPage() {
               >
                 Weekly
               </Button>
-              <Button
-                variant={timeFilter === 'monthly' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setTimeFilter('monthly')}
-                className="text-xs"
-              >
-                Monthly
-              </Button>
             </div>
           </div>
         </div>
 
-        <SummariesPanel timeFilter={timeFilter} />
+        {/* Access Filters */}
+        <AccessFilters
+          selectedBranches={selectedBranches}
+          selectedWarehouses={selectedWarehouses}
+          onBranchChange={setSelectedBranches}
+          onWarehouseChange={setSelectedWarehouses}
+          userRole="operations_manager"
+        />
+
+        <DriversPanel timeFilter={timeFilter} />
       </div>
     </main>
   );

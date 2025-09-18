@@ -98,7 +98,7 @@ export default function SignupPage() {
               <motion.button
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full rounded-md bg-primary text-primary-foreground py-2.5 text-sm font-medium hover:opacity-90 disabled:opacity-50 inline-flex items-center justify-center gap-2"
+                className="w-full rounded-md bg-primary text-white py-2.5 text-sm font-medium hover:opacity-90 disabled:opacity-50 inline-flex items-center justify-center gap-2"
                 disabled={loading}
               >
                 {loading && <Loader2 className="h-4 w-4 animate-spin" />}
