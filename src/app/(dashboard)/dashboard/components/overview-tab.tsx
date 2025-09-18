@@ -115,7 +115,7 @@ export function OverviewTab() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
-            <Button className="w-full justify-start bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button className="w-full justify-start bg-primary hover:bg-primary/90 text-white">
               <Truck className="mr-2 h-4 w-4" />
               Upload New Data
             </Button>
