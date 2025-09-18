@@ -1,9 +1,11 @@
-import { ChatbotTab } from '../components/ChatbotPanel';
+import { ChatbotPanel } from '../components/ChatbotPanel';
 
 export default function ChatbotPage() {
   return (
-    <div className="p-6">
-      <ChatbotTab />
-    </div>
+    <main className="p-6">
+      <div className="max-w-7xl mx-auto">
+        <ChatbotPanel />
+      </div>
+    </main>
   );
 }

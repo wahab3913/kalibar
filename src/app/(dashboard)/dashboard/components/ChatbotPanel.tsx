@@ -68,7 +68,7 @@ const sampleResponses = {
   },
 };
 
-export function ChatbotTab() {
+export function ChatbotPanel() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -173,7 +173,7 @@ export function ChatbotTab() {
               >
                 {message.type === 'assistant' && (
                   <Avatar className="h-8 w-8 bg-primary">
-                    <AvatarFallback className="bg-primary text-primary-foreground">
+                    <AvatarFallback className="bg-primary text-white">
                       <Bot className="h-4 w-4" />
                     </AvatarFallback>
                   </Avatar>
@@ -189,7 +189,7 @@ export function ChatbotTab() {
                     className={cn(
                       'rounded-lg px-4 py-2 text-sm',
                       message.type === 'user'
-                        ? 'bg-primary text-primary-foreground ml-auto'
+                        ? 'bg-primary text-white ml-auto'
                         : 'bg-muted text-foreground'
                     )}
                   >
@@ -204,7 +204,7 @@ export function ChatbotTab() {
                           variant="outline"
                           size="sm"
                           onClick={() => handleSuggestionClick(suggestion)}
-                          className="text-xs border-border hover:bg-accent hover:text-accent-foreground"
+                          className="text-xs border-border hover:bg-primary/10 hover:text-primary"
                         >
                           {suggestion}
                         </Button>
@@ -226,7 +226,7 @@ export function ChatbotTab() {
             {isTyping && (
               <div className="flex gap-3 justify-start">
                 <Avatar className="h-8 w-8 bg-primary">
-                  <AvatarFallback className="bg-primary text-primary-foreground">
+                  <AvatarFallback className="bg-primary text-white">
                     <Bot className="h-4 w-4" />
                   </AvatarFallback>
                 </Avatar>
@@ -261,7 +261,7 @@ export function ChatbotTab() {
             <Button
               type="submit"
               disabled={!inputValue.trim() || isTyping}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="bg-primary hover:bg-primary/90 text-white"
             >
               <Send className="h-4 w-4" />
             </Button>
@@ -278,7 +278,7 @@ export function ChatbotTab() {
                 variant="ghost"
                 size="sm"
                 onClick={() => handleSendMessage(question)}
-                className="text-xs h-7 px-2 text-muted-foreground hover:text-foreground hover:bg-accent"
+                className="text-xs h-7 px-2 text-muted-foreground hover:text-primary hover:bg-primary/10"
                 disabled={isTyping}
               >
                 {question}

@@ -15,6 +15,7 @@ import {
   Settings,
   Upload,
   X,
+  Shield,
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -23,16 +24,26 @@ interface SidebarProps {
 }
 
 const navigation = [
-  { name: 'Drivers', href: '/dashboard', icon: Home },
+  { name: 'Overview', href: '/dashboard', icon: Home },
   {
     name: 'AI Chatbot',
     href: '/dashboard/chatbot',
     icon: MessageSquare,
     badge: 'AI',
   },
-  { name: 'Summaries', href: '/dashboard/summaries', icon: FileText },
-  { name: 'Performance', href: '/dashboard/performance', icon: TrendingUp },
+  {
+    name: 'Summaries',
+    href: '/dashboard/summaries',
+    icon: FileText,
+    badge: 'Auto',
+  },
+  {
+    name: 'Driver Performance',
+    href: '/dashboard/performance',
+    icon: TrendingUp,
+  },
   { name: 'Team', href: '/dashboard/team', icon: Users },
+  { name: 'User Management', href: '/dashboard/users', icon: Shield },
   { name: 'Data Upload', href: '/dashboard/upload', icon: Upload },
   { name: 'Settings', href: '/dashboard/settings', icon: Settings },
 ];
@@ -62,7 +73,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                           className={cn(
                             isActive
                               ? 'bg-black/20 text-white border border-white/30'
-                              : 'text-white/80 hover:text-white hover:bg-white/10',
+                              : 'text-white/80 hover:text-white hover:bg-primary/20',
                             'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-medium transition-colors'
                           )}
                         >
@@ -109,7 +120,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
               variant="ghost"
               size="sm"
               onClick={onClose}
-              className="text-white/80 hover:text-white hover:bg-white/10"
+              className="text-white/80 hover:text-white hover:bg-primary/20"
             >
               <X className="h-5 w-5" />
             </Button>
@@ -128,7 +139,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                           className={cn(
                             isActive
                               ? 'bg-black/20 text-white border border-white/30'
-                              : 'text-white/80 hover:text-white hover:bg-white/10',
+                              : 'text-white/80 hover:text-white hover:bg-primary/20',
                             'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-medium transition-colors'
                           )}
                         >

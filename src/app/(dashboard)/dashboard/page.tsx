@@ -9,7 +9,7 @@ export default function DashboardPage() {
         {/* Page Title */}
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-foreground">
-            Drivers Dashboard
+            Operations Overview
           </h1>
           <p className="text-muted-foreground">
             Monitor driver performance and delivery operations
