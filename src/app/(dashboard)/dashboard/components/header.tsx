@@ -80,7 +80,7 @@ export function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
             <Button variant="ghost" className="relative h-8 w-8 rounded-full">
               <Avatar className="h-8 w-8">
                 <AvatarImage src="/professional-manager.png" alt="Profile" />
-                <AvatarFallback className="bg-primary text-primary-foreground">
+                <AvatarFallback className="bg-primary text-white">
                   JD
                 </AvatarFallback>
               </Avatar>

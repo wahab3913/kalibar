@@ -47,18 +47,20 @@ export default function LoginPage() {
       <div>
         <div>
           {/* Logo */}
-          <div className="flex items-center justify-center space-x-2 mb-8 text-white">
-            <BarChart3 className="h-8 w-8 text-white" />
-            <span className="text-2xl font-bold text-white">Kalibur</span>
+          <div className="flex items-center justify-center space-x-2 mb-8 text-primary-foreground">
+            <BarChart3 className="h-8 w-8 text-primary-foreground" />
+            <span className="text-2xl font-bold text-primary-foreground">
+              Kalibur
+            </span>
           </div>
 
-          <Card className="border-border bg-card w-[400px]">
+          <Card className="border-border bg-card w-[400px] shadow-2xl">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl text-foreground">
-                Welcome Back
+                Welcome Back to Kalibur
               </CardTitle>
               <CardDescription className="text-muted-foreground">
-                Sign in to your delivery management dashboard
+                Access your AI-powered operations dashboard
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -102,7 +104,7 @@ export default function LoginPage() {
                       type="button"
                       variant="ghost"
                       size="sm"
-                      className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                      className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-primary/10"
                       onClick={() => setShowPassword(!showPassword)}
                     >
                       {showPassword ? (
@@ -117,7 +119,7 @@ export default function LoginPage() {
                 <div className="flex items-center justify-between">
                   <Link
                     href="/forgot-password"
-                    className="text-sm text-primary hover:text-primary/80"
+                    className="text-sm text-primary hover:text-primary/70"
                   >
                     Forgot password?
                   </Link>
@@ -126,7 +128,7 @@ export default function LoginPage() {
                 <Link href="/dashboard">
                   <Button
                     // type="submit"
-                    className="w-full cursor-pointer bg-primary hover:bg-primary/90 text-primary-foreground"
+                    className="w-full cursor-pointer bg-primary hover:bg-primary/90 text-white"
                     // disabled={isLoading}
                   >
                     Sign In
@@ -139,7 +141,7 @@ export default function LoginPage() {
                   Don't have an account?{' '}
                   <Link
                     href="/signup"
-                    className="text-primary hover:text-primary/80"
+                    className="text-primary hover:text-primary/70"
                   >
                     Sign up
                   </Link>
