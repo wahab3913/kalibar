@@ -2,7 +2,11 @@
 import { motion } from 'framer-motion';
 import { Truck, BarChart3 } from 'lucide-react';
 
-export default function AuthBackground({ children }: { children: React.ReactNode }) {
+export default function AuthBackground({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div className="relative min-h-dvh grid place-items-center px-4 py-8 md:py-12 overflow-hidden bg-primary">
       <motion.div
@@ -20,7 +24,7 @@ export default function AuthBackground({ children }: { children: React.ReactNode
 
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute left-8 top-16 text-white/25"
+        className="pointer-events-none absolute left-8 top-16 text-primary-foreground/25"
         initial={{ y: -10 }}
         animate={{ y: 10 }}
         transition={{ duration: 3, repeat: Infinity, repeatType: 'reverse' }}
@@ -29,7 +33,7 @@ export default function AuthBackground({ children }: { children: React.ReactNode
       </motion.div>
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute right-10 bottom-20 text-white/20"
+        className="pointer-events-none absolute right-10 bottom-20 text-primary-foreground/20"
         initial={{ y: 10 }}
         animate={{ y: -10 }}
         transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }}
@@ -41,5 +45,3 @@ export default function AuthBackground({ children }: { children: React.ReactNode
     </div>
   );
 }
-
-
